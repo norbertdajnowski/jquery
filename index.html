@@ -1,26 +1,76 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>jQuery Get Tag Value</title>
+		<title>jQuery/JSON Task 1</title>
 
 		<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
 		<link rel="stylesheet" href="style.css">
 	</head>
+	<body>
+
+		<form class="login">
+		  <input type="text" placeholder="Username" id="user">
+		  <input type="password" placeholder="Password" id="pass">
+		  <input type="confirm-password" placeholder="Confirm Password" id="confirm_pass">
+		  		  <button type='button' id="reg-button">submit</button> 
+		</form>
+
+		<div class="jquery-write">
+			<h1>Your entry</h1>
+			<p id="status"></p>
+			<p id="user-output"></p>
+			<p id="pass-output"></p>
+			<p id="confirm-pass-output"></p>
+		</div>
+
+		<div class="jquery-write">
+			<h1>Recently Saved</h1>
+			<p id="user-json"></p>
+			<p id="pass-json"></p>
+			<p id="confirm-pass-json"></p>
+		</div>
 
 	<script type="text/javascript">
 
 		$(document).ready(function(){
+	        $.getJSON("recent.json", function(data){
+	            $("#user-json").text("Username: " + data.username);
+	            $("#pass-json").text("Password: " + data.password);
+	            $("#confirm-pass-json").text("Confirmed Password: " + data.confirm-pass);
+	        }).fail(function(){
+	            console.log("An error has occurred.");
+	        });
+    	});
+    
+
+
+		$("#reg-button").click(function(){
+
+			var username = $("#user").val();
+			var password = $("#pass").val();
+			var confirm_password = $("#confirm_pass").val();
+
+			$("#user-output").text("Username entered: "+ username);
+			$("#pass-output").text("Password entered: "+ password);
+			$("#confirm-pass-output").text("Confirm passwored: "+confirm_password);
 
 		});
 
+		$(".login").mouseenter(function(){
+        	if ($("#user-output").text() == "") {
+				$("#status").text("User is filling out the form...");
+			}
+
+    	});
+
+
+		$(".login").mouseleave(function(){
+        	
+			$("#status").text("");
+			
+    	});
+
+
 	</script>
-	<body>
-
-		<form class="login">
-		  <input type="text" placeholder="Username">
-		  <input type="password" placeholder="Password">
-		  <button>Login</button>
-		</form>
-
 	</body>
 </html>

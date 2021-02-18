@@ -1,30 +1,39 @@
 @import "bourbon";
  body {
    background-color: rgba(244, 91, 105, 1);
-   font-family: 'Asap', sans-serif;
+   width: 100%;
+  padding-top: 20vh;
+   font-family: 'Playfair Display', serif;
+   display: inline-block;
 }
  .login {
    overflow: hidden;
    background-color: white;
    padding: 40px 30px 30px 30px;
    border-radius: 10px;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   width: 400px;
+   width: 30%;
+   margin: auto;
    box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+   align-items: center;
 }
- .login::before, .login::after {
-   content: '';
-   position: absolute;
-   width: 600px;
-   height: 600px;
-   border-top-left-radius: 40%;
-   border-top-right-radius: 45%;
-   border-bottom-left-radius: 35%;
-   border-bottom-right-radius: 40%;
-   z-index: -1;
-}
+
+  .jquery-write{
+  overflow: hidden;
+   background-color: white;
+   padding: 40px 30px 30px 30px;
+   border-radius: 10px;
+   width: 30%;
+   margin: auto;
+   margin-top: 50px;
+   box-shadow: 5px 10px 10px rgba(2, 128, 144, 0.2);
+   align-items: center;
+  }
+
+  .jquery-write h1{
+    margin: auto;
+    text-align: center;
+  }
+
  .login::before {
    left: 40%;
    bottom: -130%;
@@ -36,18 +45,17 @@
    background-color: rgba(2, 128, 144, 0.2);
 }
  .login > input {
-   font-family: 'Asap', sans-serif;
-   display: block;
+   font-family: 'Playfair Display', serif;
    border-radius: 5px;
    font-size: 16px;
-   background: white;
+   background: rgba(233, 230, 230);
    width: 100%;
    border: 0;
    padding: 10px 10px;
    margin: 15px -10px;
 }
  .login > button {
-   font-family: 'Asap', sans-serif;
+   font-family: 'Playfair Display', serif;
    cursor: pointer;
    color: #fff;
    font-size: 16px;
@@ -55,9 +63,7 @@
    width: 80px;
    border: 0;
    padding: 10px 0;
-   margin-top: 10px;
-   margin-left: -5px;
-   border-radius: 5px;
+   margin: auto;
    background-color: rgba(244, 91, 105, 1);
 }
  .login > button:hover {
