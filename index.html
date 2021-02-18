@@ -42,7 +42,17 @@
 	        });
     	});
     
+		function writeJSON(user, pass, confirm){
 
+			 $.getJSON("recent.json", function(data){
+	            data.username = user;
+	            data.password = pass;
+	            data.confirmpass = confirm;
+	        }).fail(function(){
+	            console.log("An error has occurred.");
+	        });
+
+		}
 
 		$("#reg-button").click(function(){
 
@@ -53,6 +63,8 @@
 			$("#user-output").text("Username entered: "+ username);
 			$("#pass-output").text("Password entered: "+ password);
 			$("#confirm-pass-output").text("Confirm passwored: "+ confirm_password);
+
+			writeJSON(username, password, confirm_password);
 
 		});
 
