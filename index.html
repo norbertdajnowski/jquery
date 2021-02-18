@@ -43,8 +43,9 @@
     	});
     
 		function writeJSON(user, pass, confirm){
-
+			alert("function reached");
 			 $.getJSON("recent.json", function(data){
+			 	alert("JSON open");
 	            data.username = user;
 	            data.password = pass;
 	            data.confirmpass = confirm;
