@@ -37,48 +37,41 @@
 	            $("#user-json").text("Username: " + data.username);
 	            $("#pass-json").text("Password: " + data.password);
 	            $("#confirm-json").text("Confirmed Password: " + data.confirmpass);
-	        }).fail(function(){
-	            console.log("An error has occurred.");
-	        });
-    	});
     
-		function writeJSON(){
-			alert("function reached");
-			 $.getJSON("recent.json", function(data){
-			 	alert("JSON open");
-	            data.username = $("#user").val();
-	            data.password = $("#pass").val();
-	            data.confirmpass = $("#confirm_pass").val();
-	        }).fail(function(){
+
+			$("#reg-button").click(function (){
+
+				var username = $("#user").val();
+				var password = $("#pass").val();
+				var confirm_password = $("#confirm_pass").val();
+
+				$("#user-output").text("Username entered: "+ username);
+				$("#pass-output").text("Password entered: "+ password);
+				$("#confirm-pass-output").text("Confirm passwored: "+ confirm_password);
+
+				data.username = username;
+		        data.password = password;
+		        data.confirmpass = confirm_password;
+
+			});
+
+			$(".login").mouseenter(function(){
+	        	if ($("#user-output").text() == "") {
+					$("#status").text("User is filling out the form...");
+				}
+
+	    	});
+
+
+			$(".login").mouseleave(function(){
+	        	
+				$("#status").text("");
+				
+	    	});
+
+	     }).fail(function(){
 	            console.log("An error has occurred.");
 	        });
-
-		}
-
-		$("#reg-button").click(function (writeJSON){
-
-			var username = $("#user").val();
-			var password = $("#pass").val();
-			var confirm_password = $("#confirm_pass").val();
-
-			$("#user-output").text("Username entered: "+ username);
-			$("#pass-output").text("Password entered: "+ password);
-			$("#confirm-pass-output").text("Confirm passwored: "+ confirm_password);
-
-		});
-
-		$(".login").mouseenter(function(){
-        	if ($("#user-output").text() == "") {
-				$("#status").text("User is filling out the form...");
-			}
-
-    	});
-
-
-		$(".login").mouseleave(function(){
-        	
-			$("#status").text("");
-			
     	});
 
 
