@@ -42,20 +42,20 @@
 	        });
     	});
     
-		function writeJSON(user, pass, confirm){
+		function writeJSON(){
 			alert("function reached");
 			 $.getJSON("recent.json", function(data){
 			 	alert("JSON open");
-	            data.username = user;
-	            data.password = pass;
-	            data.confirmpass = confirm;
+	            data.username = $("#user").val();
+	            data.password = $("#pass").val();
+	            data.confirmpass = $("#confirm_pass").val();
 	        }).fail(function(){
 	            console.log("An error has occurred.");
 	        });
 
 		}
 
-		$("#reg-button").click(function(){
+		$("#reg-button").click(function(writeJSON()){
 
 			var username = $("#user").val();
 			var password = $("#pass").val();
