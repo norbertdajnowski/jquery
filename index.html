@@ -36,7 +36,7 @@
 	        $.getJSON("recent.json", function(data){
 	            $("#user-json").text("Username: " + data.username);
 	            $("#pass-json").text("Password: " + data.password);
-	            $("#confirm-pass-json").text("Confirmed Password: " + data.confirm-pass);
+	            $("#confirm-pass-json").text("Confirmed Password: " + data.confirm_pass);
 	        }).fail(function(){
 	            console.log("An error has occurred.");
 	        });
@@ -52,7 +52,7 @@
 
 			$("#user-output").text("Username entered: "+ username);
 			$("#pass-output").text("Password entered: "+ password);
-			$("#confirm-pass-output").text("Confirm passwored: "+confirm_password);
+			$("#confirm-pass-output").text("Confirm passwored: "+ confirm_password);
 
 		});
 
