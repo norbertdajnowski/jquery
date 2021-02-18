@@ -27,7 +27,7 @@
 			<h1>Recently Saved</h1>
 			<p id="user-json"></p>
 			<p id="pass-json"></p>
-			<p id="confirm-pass-json"></p>
+			<p id="confirm-json"></p>
 		</div>
 
 	<script type="text/javascript">
@@ -36,7 +36,7 @@
 	        $.getJSON("recent.json", function(data){
 	            $("#user-json").text("Username: " + data.username);
 	            $("#pass-json").text("Password: " + data.password);
-	            $("#confirm-pass-json").text("Confirmed Password: " + data.confirm_pass);
+	            $("#confirm-json").text("Confirmed Password: " + data.confirmpass);
 	        }).fail(function(){
 	            console.log("An error has occurred.");
 	        });
